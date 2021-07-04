@@ -1,168 +1,772 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-	<link rel="subresource" href="snow.svg" />
-    <title>圣诞贺卡</title>
-    <style>
-		@keyframes snowRotate {
-			from {
-				transform: rotate(0);
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk//IGNORE">
+		</meta>
+		<title>个人简历模板</title>
+		<style>
+			html,
+			body,
+			p,
+			ul,
+			table,
+			tr,
+			td {
+				margin: 0;
+				padding: 0
 			}
-			to {
-				transform: rotate(360deg);
+
+			a {
+				text-decoration: none
 			}
-		}
-		@-webkit-keyframes snowRotate {
-			from {
-				-webkit-transform: rotate(0);
+
+			li {
+				list-style: none
 			}
-			to {
-				-webkit-transform: rotate(360deg);
+
+			img {
+				border: 0 none
 			}
-		}
-		@-moz-keyframes snowRotate {
-			from {
-			  -moz-transform: rotate(0);
+
+			body {
+				font-family: 'Microsoft YaHei';
+				font-size: 14px
 			}
-			to {
-				-moz-transform: rotate(360deg);
+
+			div,
+			span,
+			a {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-o-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				box-sizing: border-box
 			}
-		}
-		@keyframes snowMove {
-			form {
-				top: 10%;
+
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+				border: 0 none;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				-o-box-sizing: border-box;
+				box-sizing: border-box
 			}
-			to {
-				top: 90%;
+
+			td {
+				text-align: left
 			}
-		}
-		@-webkit-keyframes snowMove {
-			form {
-				top: 10%;
+
+			.resume_clearfix {
+				display: block;
+				overflow: hidden;
+				clear: both
 			}
-			to {
-				top: 90%;
+
+			.all_wrap {
+				width: 693px
 			}
-		}
-		@-moz-keyframes snowMove {
-			form {
-				top: 10%;
+
+			.at {
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden
 			}
-			to {
-				top: 90%;
+
+			.top_info {
+				padding-left: 10px;
 			}
-		}
 
-        body {
-            -webkit-font-smoothing: antialiased;
-            font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
-            background-image: url('bg.jpg');
-            font-size: 125%;
-            margin: 0;
-        }
-
-		h1 {
-            font-size: 600%;
-            font-weight: 800;
-			color: rgb(255, 25, 25);
-        }
-
-		#container {
-			width: 90%;
-		}
-
-		img {
-			width: 10px;
-			position: absolute;
-			top: 0;
-			transition: 3s linear;
-			-webkit-transition: 3s linear;
-			-moz-transition: 3s linear;
-			animation: snowRotate 3s infinite alternate,
-			snowMove 4s linear;
-			-webkit-animation: snowRotate 3s infinite alternate,
-			snowMove 4s linear;
-			-moz-animation: snowRotate 3s infinite alternate,
-			snowMove 4s linear;
-		}
-
-		.title {
-            position: absolute;
-            width: 150%;
-            top: 50%;
-            transform: translate(0, -50%);
-            text-align: center;
-        }
-
-        .content {
-            position: absolute;
-            width: 140%;
-            top: 50%;
-            transform: translate(0, -50%);
-            text-align: center;
-        }
-
-        .button {
-			position: absolute;
-            width: 187%;
-            top: 97%;
-			transform: translate(0, -50%);
-            text-align: center;
-        }
-
-        a {
-            color: rgb(253, 99, 125);
-			font-size: 180%
-        }
-    </style>
-</head>
-
-<body>
-	<div class="title">
-        <h1>圣 诞 节 快 乐 ！</h1>
-    </div>
-
-	<div class="button">
-		<a href="count.html">点击有惊喜</a>
-	</div>
-
-	<div id="container"></div>
-
-    <script>
-		var w = innerWidth,
-		h = innerHeight;
-		var snowImg = document.createElement('img');
-		var snow_top = 0,
-			snow_left = 0;
-		var count = 0;
-		var snow_number = h / 3;
-
-		snowImg.src = './snow.svg';
-		var int1 = setInterval(function(){
-			w = innerWidth,
-			h = innerHeight;
-			var snowTmpImg = snowImg.cloneNode();
-			snow_left = Math.round(Math.random()*w) - 20;
-			snowTmpImg.style.left = snow_left + 'px';
-			snowTmpImg.style.width = Math.round(Math.random()*15) + 5 + 'px';
-			container.appendChild(snowTmpImg);
-			snowTmpImg.style.opacity = Math.round(Math.random()*10)/10;
-			count++;
-		}, 0);
-
-		var int2 = setInterval(function(){
-			if (container.childNodes.length > snow_number) {
-				container.removeChild(container.
-				childNodes[0]);
+			.page {
+				width: 693px;
+				margin: 0 auto;
+				padding: 3px;
+				background-color: #fff
 			}
-		}, 0);
-    </script>
-</body>
 
+			.gray {
+				color: #919191 !important
+			}
+
+			.l_green {
+				color: #6d8194 !important
+			}
+
+			.blue {
+				color: #4567af !important
+			}
+
+			.yellow {
+				color: #fae001 !important
+			}
+
+			.y_green {
+				color: #a4b049 !important
+			}
+
+			.s_blue {
+				color: #00a0e9 !important
+			}
+
+			.orange {
+				color: #f39800 !important
+			}
+
+			.resume_boxt3 {
+				width: 693px;
+				background-color: #d7dfe7;
+				border: 15px solid #efefef
+			}
+
+			.head_tr {
+				vertical-align: top
+			}
+
+			.mes_t3 {
+				margin: 126px 15px 20px 15px
+			}
+
+			.per_list3 {
+				line-height: 22px;
+				font-size: 12px;
+				color: #d8dcde
+			}
+
+			.people {
+				width: 264px;
+				margin-top: 25px
+			}
+
+			.peo_head {
+				text-align: center;
+				padding-bottom: 10px
+			}
+
+			.email_t3 {
+				max-width: 146px;
+				word-wrap: break-word;
+				color: #919191
+			}
+
+			.name_t3 {
+				height: 40px;
+				line-height: 40px;
+				font-size: 18px;
+				color: #000;
+				text-align: center
+			}
+
+			.divide {
+				width: 693px;
+				text-align: center;
+				background-color: #efefef
+			}
+
+			.divide img {
+				width: 662px;
+				height: 9px;
+				border: 0 none
+			}
+
+			.top_line {
+				text-align: center;
+			}
+
+			.mes_box3 {
+				width: 693px;
+				background-color: #efefef;
+				border-left: 15px solid #efefef;
+				border-right: 15px solid #efefef
+			}
+
+			.bar_l {
+				width: 370px;
+				vertical-align: top;
+				padding: 12px 0px 20px 0px
+			}
+
+			.bar_r {
+				width: 280px;
+				vertical-align: top;
+				padding-top: 12px
+			}
+
+			.per_title3 {
+				margin-left: 9px
+			}
+
+			.title_icon3 {
+				*width: 31px;
+				*height: *31px;
+				padding-right: 12px;
+				border: 0 none
+			}
+
+			.title_icon3 img {
+				margin-top: 5px
+			}
+
+			.info_type3 {
+				margin: -4px 0 0 23px;
+				*margin: -1px 0 0 23px;
+				*border-left: 1px solid #448aca
+			}
+
+			.info_type4 {
+				margin-left: 23px;
+				*border-left: 1px solid #448aca
+			}
+
+			.info_list3 {
+				line-height: 22px;
+				font-size: 12px;
+				color: #000;
+				border-left: 1px solid #448aca
+			}
+
+			.info_list_com {
+				line-height: 22px;
+				font-size: 12px;
+				color: #000;
+				margin-top: 20px;
+				border-left: 1px solid #448aca
+			}
+
+			.title_txt3 {
+				height: 27px;
+				line-height: 27px;
+				font-weight: bold;
+				color: #000;
+				text-align: left
+			}
+
+			.exp3 {
+				width: 140px;
+				vertical-align: top;
+				padding-right: 10px
+			}
+
+			.edu3 {
+				width: 64px;
+				vertical-align: top;
+				text-align: right
+			}
+
+			.edu4 {
+				width: 64px;
+				vertical-align: top;
+				text-align: right
+			}
+
+			.limit3 {
+				width: 268px
+			}
+
+			.reu3 {
+				width: 100px;
+				vertical-align: top;
+			}
+
+			.tec {
+				width: 104px
+			}
+
+			.tec a {
+				display: block;
+				width: 104px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis
+			}
+
+			.tec span {
+				display: block;
+				width: 104px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis
+			}
+
+			.edu5 {
+				width: 64px;
+				vertical-align: top;
+				text-align: right
+			}
+
+			.exp3 {
+				width: 102px
+			}
+
+			.exp3 span {
+				display: block;
+				width: 102px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis
+			}
+
+			.exp3 a {
+				display: block;
+				width: 102px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis
+			}
+
+			.time3 {
+				width: 106px;
+				vertical-align: top;
+			}
+
+			.con3 {
+				text-indent: 28px
+			}
+
+			.english {
+				width: 67px;
+				text-align: right;
+				vertical-align: top;
+			}
+
+			.con_detail {
+				width: 304px;
+				line-height: 22px;
+				font-size: 12px;
+				color: #919191;
+				padding-left: 28px
+			}
+
+			.regular_t3 {
+				max-width: 160px
+			}
+
+			.pl {
+				width: 100px;
+				padding-left: 27px
+			}
+
+			.com_t3 {
+				width: 150px
+			}
+
+			.introduce {
+				width: 248px;
+				line-height: 22px;
+				font-size: 12px;
+				color: #919191;
+				padding-left: 28px
+			}
+
+			.edu_t3 {
+				width: 113px;
+				vertical-align: top;
+				padding-left: 28px
+			}
+
+			.limit_t3 {
+				width: 82px
+			}
+
+			.con_t3 {
+				position: relative;
+				width: 176px;
+				height: 16px;
+				*height: 15px;
+				top: 2px;
+				background-color: #448aca;
+				border: 1px solid #accbe7
+			}
+
+			.rank_t3 {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 70%;
+				height: 16px;
+				line-height: 16px;
+				text-indent: 6px;
+				background-color: #accbe7;
+				color: #919191
+			}
+
+			.cer {
+				width: 180px;
+				padding-left: 28px
+			}
+
+			.cer span {
+				display: block;
+				width: 160px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis
+			}
+
+			.pofi {
+				width: 106px;
+				text-align: right;
+				vertical-align: top
+			}
+		</style>
+	</head>
+	<body>
+		<div xmlns="" class="page">
+			<div class="all_wrap">
+				<table class="resume_boxt3">
+					<tr class="head_tr">
+						<td width="230">
+							<table class="mes_t3">
+								<tbody>
+									<tr class="per_list3">
+										<td class="title_icon" valign="middle"><img
+												src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon1_type3.png"
+												alt="工作经验" width="17" height="16"></td>
+										<td class="limit1"><span class="gray top_info">两年以上工作经验</span></td>
+									</tr>
+									<tr class="per_list3">
+										<td class="title_icon" valign="middle"><img
+												src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon2_type3.png"
+												alt="年龄" width="17" height="16"></td>
+										<td class="limit1"><span class="gray top_info">30岁</span></td>
+									</tr>
+									<tr class="per_list3">
+										<td class="title_icon" valign="middle"><img
+												src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon3_type3.png"
+												alt="工作地点" width="17" height="16"></td>
+										<td class="limit1"><span class="gray top_info">广东</span></td>
+									</tr>
+									<tr class="per_list3">
+										<td class="title_icon" valign="middle"><img
+												src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon4_type3.png"
+												alt="电话号码" width="17" height="16"></td>
+										<td class="limit1"><span class="gray top_info">139*******(手机)
+											</span></td>
+									</tr>
+									<tr class="per_list3">
+										<td class="title_icon" valign="middle"><img
+												src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon5_type3.png"
+												alt="邮箱" width="17" height="16"></td>
+										<td class="limit1"><span class="gray top_info">qianyaoming@51job.com</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td>
+							<table class="people">
+								<tr>
+									<td class="peo_head"><img
+											src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/head.png"
+											alt="简历照片" width="105" height="148"></td>
+								</tr>
+								<tr>
+									<td>
+										<p class="name_t3">钱耀明</p>
+									</td>
+								</tr>
+								<tr>
+									<td class="posi top_line"><a class="s_blue" href="https://jobs.51job.com/ruanjian/"
+											target="_blank">软件工程师</a></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr class="distance_b"></tr>
+				</table>
+				<table class="divide">
+					<tbody>
+						<tr>
+							<td class="top_line"><img
+									src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/divide_type3.png"></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="mes_box3">
+					<tbody>
+						<tr>
+							<td class="bar_l">
+								<table class="per_title3">
+									<tbody>
+										<tr>
+											<td class="title_icon3" valign="bottom"><img
+													src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon6_type3.png"
+													alt="最近工作" width="31" height="31"></td>
+											<td>
+												<p class="title_txt3">最近工作</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type3">
+									<tbody>
+										<tr class="info_list3">
+											<td class="edu3"><span>公司：</span></td>
+											<td class="reu3"><span class="gray" title="XX有限公司">XX有限公司</span></td>
+											<td class="edu3"><span>行业：</span></td>
+											<td class="exp3"><a class="s_blue" title="计算机软件"
+													href="https://jobs.51job.com/hy01/" target="_blank">计算机软件</a></td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type4">
+									<tbody>
+										<tr class="info_list3">
+											<td class="edu4"><span>职位：</span></td>
+											<td class="limit3"><span class="gray">软件工程师</span></td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="per_title3">
+									<tbody>
+										<tr>
+											<td class="title_icon3" valign="bottom"><img
+													src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon7_type3.png"
+													alt="最高学历" width="31" height="31"></td>
+											<td>
+												<p class="title_txt3">最高学历</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type3">
+									<tbody>
+										<tr class="info_list3">
+											<td class="edu4"><span>学校：</span></td>
+											<td class="limit3"><a class="s_blue"
+													href="https://jianli.51job.com/xiaohui/1210.html"
+													target="_blank">广东海洋大学</a></td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type4">
+									<tbody>
+										<tr class="info_list3">
+											<td class="edu5"><span>学历：</span></td>
+											<td class="reu3"><span class="gray">本科</span></td>
+											<td class="edu4"><span>专业：</span></td>
+											<td class="tec"><a class="s_blue" title="电子信息科学与技术"
+													href="https://jianli.51job.com/zy0107/"
+													target="_blank">电子信息科学与技术</a></td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="per_title3">
+									<tbody>
+										<tr>
+											<td class="title_icon3" valign="bottom"><img
+													src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon8_type3.png"
+													alt="工作经验" width="31" height="31"></td>
+											<td>
+												<p class="title_txt3">工作经验</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type3">
+									<tbody>
+										<tr class="info_list3">
+											<td class="edu4"><span>公司：</span></td>
+											<td class="exp3"><span class="gray" title="XX有限公司">XX有限公司</span></td>
+											<td class="time3"><span class="gray">2014/9--2015/1</span></td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type4">
+									<tbody>
+										<tr class="info_list3">
+											<td class="edu4"><span>职位：</span></td>
+											<td class="limit3"><span class="gray">软件工程师</span></td>
+										</tr>
+										<tr class="info_list3">
+											<td class="edu4"><span>行业：</span></td>
+											<td class="limit3"><a class="s_blue" href="https://jobs.51job.com/hy01/"
+													target="_blank">计算机软件</a></td>
+										</tr>
+										<tr class="info_list3">
+											<td class="edu4"><span>部门：</span></td>
+											<td class="limit3"><span class="gray">研究部</span></td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type4">
+									<tbody>
+										<tr class="info_list3">
+											<td class="con3"><span>工作内容：</span></td>
+										</tr>
+										<tr class="info_list3">
+											<td class="con_detail">
+												1.负责开发某市级政府民生项目系统开发，BS架构，PHP+MySQL，DEDECMS框架2.一期参与部分开发，二期负责总体开发，前后端代码实现，数据库设计维护。3.负责某市级网站运维，采用LAP
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type4">
+									<tbody>
+										<tr class="info_list3">
+											<td height="20"></td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="per_title3">
+									<tbody>
+										<tr>
+											<td class="title_icon3" valign="bottom"><img
+													src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon9_type3.png"
+													alt="教育经历" width="31" height="31"></td>
+											<td>
+												<p class="title_txt3">教育经历</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type3">
+									<tbody>
+										<tr class="info_list3">
+											<td class="edu4"><span>学校：</span></td>
+											<td class="exp3"><a class="s_blue" title="广东海洋大学"
+													href="https://jianli.51job.com/xiaohui/1210.html"
+													target="_blank">广东海洋大学</a></td>
+											<td class="time3"><span class="gray">2009/8--2013/6</span></td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type4">
+									<tbody>
+										<tr class="info_list3">
+											<td class="edu4"><span>专业：</span></td>
+											<td class="regular_t3"><a class="s_blue"
+													href="https://jianli.51job.com/zy0107/"
+													target="_blank">电子信息科学与技术</a></td>
+											<td class="pl"><span class="gray">本科</span></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+							<td class="bar_r">
+								<table class="per_title3">
+									<tbody>
+										<tr>
+											<td class="title_icon3" valign="bottom"><img
+													src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon10_type3.png"
+													alt="自我评价" width="31" height="31"></td>
+											<td>
+												<p class="title_txt3">自我评价</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type3">
+									<tbody>
+										<tr class="info_list3">
+											<td class="introduce">
+												本人做事认真负责，责任心强，吃苦耐劳，有良好的沟通能力、自我调节能力和服务意思，对数据敏感，能熟练操作各种办公软件，相信贵公司会觉得我是此职位的合适人选
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="per_title3">
+									<tbody>
+										<tr>
+											<td class="title_icon3" valign="bottom"><img
+													src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon11_type3.png"
+													alt="求职意向" width="31" height="31"></td>
+											<td>
+												<p class="title_txt3">求职意向</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type3">
+									<tbody>
+										<tr class="info_list3">
+											<td class="edu_t3"><span>到岗时间：</span></td>
+											<td width="limit_t3"><span class="gray">可随时到岗</span></td>
+										</tr>
+										<tr class="info_list3">
+											<td class="edu_t3"><span>工作性质：</span></td>
+											<td class="limit_t3"><span class="gray">全职</span></td>
+										</tr>
+										<tr class="info_list3">
+											<td class="edu_t3"><span>希望行业：</span></td>
+											<td class="limit3"><a class="s_blue" href="https://jobs.51job.com/hy01/"
+													target="_blank">计算机软件</a></td>
+										</tr>
+										<tr class="info_list3">
+											<td class="edu_t3"><span>目标地点：</span></td>
+											<td class="limit_t3"><span class="gray">广东</span></td>
+										</tr>
+										<tr class="info_list3">
+											<td class="edu_t3"><span>期望月薪：</span></td>
+											<td class="limit_t3"><span class="gray">面议/月</span></td>
+										</tr>
+										<tr class="info_list3">
+											<td class="edu_t3"><span>目标职能：</span></td>
+											<td class="limit_t3"><a class="s_blue"
+													href="https://jobs.51job.com/ruanjian/" target="_blank">软件工程师</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="per_title3">
+									<tbody>
+										<tr>
+											<td class="title_icon3" valign="bottom"><img
+													src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon12_type3.png"
+													alt="语言能力" width="31" height="31"></td>
+											<td>
+												<p class="title_txt3">语言能力</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type3">
+									<tbody>
+										<tr class="info_list3">
+											<td class="english"><span>英语：</span></td>
+											<td class="limit2">
+												<p class="con_t3"><span class="rank_t3 ">良好</span></p>
+											</td>
+										</tr>
+										<tr class="info_list3">
+											<td class="english"><span>听说：</span></td>
+											<td class="limit2">
+												<p class="con_t3"><span class="rank_t3">良好</span></p>
+											</td>
+										</tr>
+										<tr class="info_list3">
+											<td class="english"><span>读写：</span></td>
+											<td class="limit2">
+												<p class="con_t3"><span class="rank_t3">良好</span></p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="per_title3">
+									<tbody>
+										<tr>
+											<td class="title_icon3" valign="bottom"><img
+													src="https://img01.51jobcdn.com/im/2017/resumetemplate/xsl/icon13_type3.png"
+													alt="证书" width="31" height="31"></td>
+											<td>
+												<p class="title_txt3">证书</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<table class="info_type3">
+									<tbody>
+										<tr class="info_list3">
+											<td class="cer"><span class="gray" title="大学英语四级">大学英语四级</span></td>
+											<td class="pofi"><span class="gray">2010/12</span></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
 </html>
