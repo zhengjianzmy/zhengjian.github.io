@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="subresource" href="snow.svg" />
+    <title>圣诞贺卡</title>
+    <style>
+		@keyframes snowRotate {
+			from {
+				transform: rotate(0);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+		@-webkit-keyframes snowRotate {
+			from {
+				-webkit-transform: rotate(0);
+			}
+			to {
+				-webkit-transform: rotate(360deg);
+			}
+		}
+		@-moz-keyframes snowRotate {
+			from {
+			  -moz-transform: rotate(0);
+			}
+			to {
+				-moz-transform: rotate(360deg);
+			}
+		}
+		@keyframes snowMove {
+			form {
+				top: 10%;
+			}
+			to {
+				top: 90%;
+			}
+		}
+		@-webkit-keyframes snowMove {
+			form {
+				top: 10%;
+			}
+			to {
+				top: 90%;
+			}
+		}
+		@-moz-keyframes snowMove {
+			form {
+				top: 10%;
+			}
+			to {
+				top: 90%;
+			}
+		}
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+            background-image: url('bg.jpg');
+            font-size: 125%;
+            margin: 0;
+        }
+
+		h1 {
+            font-size: 600%;
+            font-weight: 800;
+			color: rgb(255, 25, 25);
+        }
+
+		#container {
+			width: 90%;
+		}
+
+		img {
+			width: 10px;
+			position: absolute;
+			top: 0;
+			transition: 3s linear;
+			-webkit-transition: 3s linear;
+			-moz-transition: 3s linear;
+			animation: snowRotate 3s infinite alternate,
+			snowMove 4s linear;
+			-webkit-animation: snowRotate 3s infinite alternate,
+			snowMove 4s linear;
+			-moz-animation: snowRotate 3s infinite alternate,
+			snowMove 4s linear;
+		}
+
+		.title {
+            position: absolute;
+            width: 150%;
+            top: 50%;
+            transform: translate(0, -50%);
+            text-align: center;
+        }
+
+        .content {
+            position: absolute;
+            width: 140%;
+            top: 50%;
+            transform: translate(0, -50%);
+            text-align: center;
+        }
+
+        .button {
+			position: absolute;
+            width: 187%;
+            top: 97%;
+			transform: translate(0, -50%);
+            text-align: center;
+        }
+
+        a {
+            color: rgb(253, 99, 125);
+			font-size: 180%
+        }
+    </style>
+</head>
+
+<body>
+	<div class="title">
+        <h1>圣 诞 节 快 乐 ！</h1>
+    </div>
+
+	<div class="button">
+		<a href="count.html">点击有惊喜</a>
+	</div>
+
+	<div id="container"></div>
+
+    <script>
+		var w = innerWidth,
+		h = innerHeight;
+		var snowImg = document.createElement('img');
+		var snow_top = 0,
+			snow_left = 0;
+		var count = 0;
+		var snow_number = h / 3;
+
+		snowImg.src = './snow.svg';
+		var int1 = setInterval(function(){
+			w = innerWidth,
+			h = innerHeight;
+			var snowTmpImg = snowImg.cloneNode();
+			snow_left = Math.round(Math.random()*w) - 20;
+			snowTmpImg.style.left = snow_left + 'px';
+			snowTmpImg.style.width = Math.round(Math.random()*15) + 5 + 'px';
+			container.appendChild(snowTmpImg);
+			snowTmpImg.style.opacity = Math.round(Math.random()*10)/10;
+			count++;
+		}, 0);
+
+		var int2 = setInterval(function(){
+			if (container.childNodes.length > snow_number) {
+				container.removeChild(container.
+				childNodes[0]);
+			}
+		}, 0);
+    </script>
+</body>
+
+</html>
