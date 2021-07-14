@@ -1,0 +1,12 @@
+site_name: 个人简历资料汇总
+
+theme: readthedocs
+
+nav:
+- '基本信息': 'index.md'             # 个人信息
+- '教育经历': './study/index.md'     # 教育经历
+- '科研成果': './research/index.md'  # 科研成果
+- 工作经历:
+  - './work/fabu.md'                # 飞步科技
+  - './work/keeson.md'              # 麒盛科技
+- '其他信息': './others/index.md'   # 其他信息
